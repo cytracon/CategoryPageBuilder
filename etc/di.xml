@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Cytracon
+ *
+ * This source file is subject to the Cytracon Software License, which is available at https://www.cytracon.com/license.
+ * Do not edit or add to this file if you wish to upgrade the to newer versions in the future.
+ * If you wish to customize this module for your needs.
+ * Please refer to https://www.cytracon.com for more information.
+ *
+ * @category  Cytracon
+ * @package   Cytracon_CategoryPageBuilder
+ * @copyright Copyright (C) 2019 Cytracon (https://www.cytracon.com)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<type name="Cytracon\Builder\Data\Groups">
+		<arguments>
+			<argument name="groups" xsi:type="array">
+				<item name="category" xsi:type="array">
+					<item name="name" xsi:type="string" translate="true">Category</item>
+					<item name="sortOrder" xsi:type="number">50</item>
+				</item>
+			</argument>
+		</arguments>
+	</type>
+	<type name="Cytracon\CategoryPageBuilder\Model\CompositeConfigProvider">
+		<arguments>
+			<argument name="configProviders" xsi:type="array">
+				<item name="default" xsi:type="object">Cytracon\CategoryPageBuilder\Model\DefaultConfigProvider</item>
+				<item name="directives" xsi:type="array">
+                    <item name="my-templates" xsi:type="array">
+                        <item name="element" xsi:type="string">Cytracon_Builder/js/builder/navbar/my-templates</item>
+                        <item name="displayArea" xsi:type="string">navbar</item>
+                        <item name="additionalClasses" xsi:type="string">mgz-mytemplates</item>
+                        <item name="sortOrder" xsi:type="number">30</item>
+                    </item>
+                </item>
+			</argument>
+		</arguments>
+	</type>
+	<type name="Cytracon\Builder\Data\Elements">
+		<arguments>
+			<argument name="elements" xsi:type="array">
+                <item name="sidebar" xsi:type="array">
+                    <item name="disabled" xsi:type="boolean">false</item>
+                </item>
+				<item name="category_name" xsi:type="array">
+					<item name="name" xsi:type="string" translate="true">Category Name</item>
+					<item name="class" xsi:type="string">Cytracon\CategoryPageBuilder\Data\Element\Name</item>
+					<item name="template" xsi:type="string">Cytracon_CategoryPageBuilder::element/name.phtml</item>
+					<item name="block" xsi:type="string">Cytracon\CategoryPageBuilder\Block\Category\Element\Name</item>
+					<item name="sortOrder" xsi:type="number">600</item>
+					<item name="icon" xsi:type="string">mgz-icon mgz-icon-product</item>
+					<item name="icon_styles" xsi:type="array">
+						<item name="background-color" xsi:type="string">#ff9900</item>
+					</item>
+					<item name="group" xsi:type="string">category</item>
+					<item name="builder_description" xsi:type="string">{{ element.heading_type ? 'Heading Type: ' + element.heading_type : '' }}</item>
+					<item name="area" xsi:type="string">category</item>
+				</item>
+				<item name="category_description" xsi:type="array">
+					<item name="name" xsi:type="string" translate="true">Category Description</item>
+					<item name="class" xsi:type="string">Cytracon\CategoryPageBuilder\Data\Element\Description</item>
+					<item name="template" xsi:type="string">Cytracon_CategoryPageBuilder::element/description.phtml</item>
+					<item name="block" xsi:type="string">Cytracon\CategoryPageBuilder\Block\Category\Element\Description</item>
+					<item name="sortOrder" xsi:type="number">600</item>
+					<item name="icon" xsi:type="string">mgz-icon mgz-icon-product</item>
+					<item name="icon_styles" xsi:type="array">
+						<item name="background-color" xsi:type="string">#ff9900</item>
+					</item>
+					<item name="group" xsi:type="string">category</item>
+					<item name="builder_description" xsi:type="string">{{ element.heading_type ? 'Heading Type: ' + element.heading_type : '' }}</item>
+					<item name="area" xsi:type="string">category</item>
+				</item>
+				<item name="category_image" xsi:type="array">
+					<item name="class" xsi:type="string">Cytracon\CategoryPageBuilder\Data\Element\Image</item>
+					<item name="name" xsi:type="string" translate="true">Category Image</item>
+					<item name="template" xsi:type="string">Cytracon_CategoryPageBuilder::element/image.phtml</item>
+					<item name="block" xsi:type="string">Cytracon\CategoryPageBuilder\Block\Category\Element\Image</item>
+					<item name="sortOrder" xsi:type="number">600</item>
+					<item name="icon" xsi:type="string">mgz-icon mgz-icon-product</item>
+					<item name="icon_styles" xsi:type="array">
+						<item name="background-color" xsi:type="string">#ff9900</item>
+					</item>
+					<item name="group" xsi:type="string">category</item>
+					<item name="builder_description" xsi:type="string">{{ element.heading_type ? 'Heading Type: ' + element.heading_type : '' }}</item>
+					<item name="area" xsi:type="string">category</item>
+				</item>
+				<item name="category_staticblock" xsi:type="array">
+					<item name="class" xsi:type="string">Cytracon\CategoryPageBuilder\Data\Element</item>
+					<item name="name" xsi:type="string" translate="true">Category StaticBlock</item>
+					<item name="template" xsi:type="string">Cytracon_CategoryPageBuilder::element/static_block.phtml</item>
+					<item name="block" xsi:type="string">Cytracon\CategoryPageBuilder\Block\Category\Element\StaticBlock</item>
+					<item name="sortOrder" xsi:type="number">600</item>
+					<item name="icon" xsi:type="string">mgz-icon mgz-icon-product</item>
+					<item name="icon_styles" xsi:type="array">
+						<item name="background-color" xsi:type="string">#ff9900</item>
+					</item>
+					<item name="group" xsi:type="string">category</item>
+					<item name="builder_description" xsi:type="string">{{ element.heading_type ? 'Heading Type: ' + element.heading_type : '' }}</item>
+					<item name="area" xsi:type="string">category</item>
+				</item>
+				<item name="category_products" xsi:type="array">
+					<item name="class" xsi:type="string">Cytracon\CategoryPageBuilder\Data\Element\Products</item>
+					<item name="name" xsi:type="string" translate="true">Category Products</item>
+					<item name="template" xsi:type="string">Cytracon_CategoryPageBuilder::element/products.phtml</item>
+					<item name="block" xsi:type="string">Cytracon\CategoryPageBuilder\Block\Category\Element\Products</item>
+					<item name="sortOrder" xsi:type="number">600</item>
+					<item name="icon" xsi:type="string">mgz-icon mgz-icon-product</item>
+					<item name="icon_styles" xsi:type="array">
+						<item name="background-color" xsi:type="string">#ff9900</item>
+					</item>
+					<item name="group" xsi:type="string">category</item>
+					<item name="builder_description" xsi:type="string">{{ element.heading_type ? 'Heading Type: ' + element.heading_type : '' }}</item>
+					<item name="area" xsi:type="string">category</item>
+				</item>
+				<item name="category_subcategories" xsi:type="array">
+					<item name="class" xsi:type="string">Cytracon\CategoryPageBuilder\Data\Element\SubCategories</item>
+					<item name="name" xsi:type="string" translate="true">SubCategories</item>
+					<item name="template" xsi:type="string">Cytracon_CategoryPageBuilder::element/sub_categories.phtml</item>
+					<item name="block" xsi:type="string">Cytracon\CategoryPageBuilder\Block\Category\Element\SubCategories</item>
+					<item name="sortOrder" xsi:type="number">600</item>
+					<item name="icon" xsi:type="string">mgz-icon mgz-icon-product</item>
+					<item name="icon_styles" xsi:type="array">
+						<item name="background-color" xsi:type="string">#ff9900</item>
+					</item>
+					<item name="group" xsi:type="string">category</item>
+					<item name="builder_description" xsi:type="string">{{ element.layout ? 'Layout: ' + element.layout : '' }}</item>
+					<item name="area" xsi:type="string">category</item>
+				</item>
+			</argument>
+		</arguments>
+	</type>
+</config>

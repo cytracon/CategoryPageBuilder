@@ -1,0 +1,9 @@
+<?php
+$coreHelper  = $this->helper('\Cytracon\Core\Helper\Data');
+$element     = $this->getElement();
+$text        = $this->getCategory()->getName();
+$headingType = $element->getData('heading_type');
+?>
+<?php if ($text) { ?>
+<<?= $headingType ?> class="cpb-category-name"><?= $coreHelper->filter($text) ?></<?= $headingType ?>>
+<?php } ?>

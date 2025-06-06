@@ -1,0 +1,117 @@
+Back,Back
+Delete,Delete
+"Are you sure you want to do this?","Are you sure you want to do this?"
+Preview,Preview
+Save,Save
+"Save & New","Save & New"
+"Save & Duplicate","Save & Duplicate"
+"Save & Close","Save & Close"
+"Add New Profile","Add New Profile"
+"Manage Profiles","Manage Profiles"
+Settings,Settings
+"User Guide","User Guide"
+"Change Log","Change Log"
+"Get Support","Get Support"
+"The profile has been deleted.","The profile has been deleted."
+"We can't find a profile to delete.","We can't find a profile to delete."
+"Category Page Builder","Category Page Builder"
+"This profile no longer exists.","This profile no longer exists."
+"Edit Profile","Edit Profile"
+"New Profile","New Profile"
+Profiles,Profiles
+"Category Page Builder Profiles","Category Page Builder Profiles"
+"A total of %1 record(s) have been deleted.","A total of %1 record(s) have been deleted."
+"A total of %1 record(s) have been disabled.","A total of %1 record(s) have been disabled."
+"A total of %1 record(s) have been enabled.","A total of %1 record(s) have been enabled."
+"You saved the profile.","You saved the profile."
+"You duplicated the profile","You duplicated the profile"
+"Something went wrong while saving the profile.","Something went wrong while saving the profile."
+"Enable Cache","Enable Cache"
+"Cache Lifetime (Seconds)","Cache Lifetime (Seconds)"
+"86400 by default, if not set. To refresh instantly, clear the Blocks HTML Output cache.","86400 by default, if not set. To refresh instantly, clear the Blocks HTML Output cache."
+"Font size","Font size"
+"Text Color","Text Color"
+"Line height","Line height"
+"Font Weight","Font Weight"
+"Image Width","Image Width"
+"Image Height","Image Height"
+"Heading Type","Heading Type"
+"Use Default Theme Layout","Use Default Theme Layout"
+"Grid Columns","Grid Columns"
+"Product Options","Product Options"
+Name,Name
+Price,Price
+Image,Image
+Review,Review
+"Add To Cart","Add To Cart"
+"Short Description","Short Description"
+"Wishlist Link","Wishlist Link"
+"Compare Link","Compare Link"
+Swatches,Swatches
+"2 Columns","2 Columns"
+"3 Columns","3 Columns"
+"4 Columns","4 Columns"
+"5 Columns","5 Columns"
+"6 Columns","6 Columns"
+"7 Columns","7 Columns"
+"8 Columns","8 Columns"
+Layout,Layout
+"Display Style","Display Style"
+"Category Name","Category Name"
+"Category Product Count","Category Product Count"
+"Category Image","Category Image"
+"Category Description","Category Description"
+Length,Length
+"Name Font Size","Name Font Size"
+"Name Font Weight","Name Font Weight"
+"Name Background Color","Name Background Color"
+"Name Color","Name Color"
+"Overlay Color","Overlay Color"
+"Border Color","Border Color"
+"Hover Border Color","Hover Border Color"
+Grid,Grid
+List,List
+Slider,Slider
+None,None
+Style1,Style1
+Style2,Style2
+Enabled,Enabled
+Disabled,Disabled
+Empty,Empty
+"1 column","1 column"
+"1 column Full Width","1 column Full Width"
+Edit,Edit
+"Delete %1","Delete %1"
+"Are you sure you want to delete a %1 record?","Are you sure you want to delete a %1 record?"
+"Category Page Builder Profile","Category Page Builder Profile"
+"This function allows you to preview how your profile looks on category page. ","This function allows you to preview how your profile looks on category page. "
+"Learn More","Learn More"
+"We can't find products matching the selection.","We can't find products matching the selection."
+"Add to Cart","Add to Cart"
+"In stock","In stock"
+"Out of stock","Out of stock"
+"Add to Wish List","Add to Wish List"
+"Add to Compare","Add to Compare"
+Profile,Profile
+"General Settings","General Settings"
+"Current Version","Current Version"
+"Enable Category Page Builder","Enable Category Page Builder"
+"Default Profile","Default Profile"
+Category,Category
+"Category StaticBlock","Category StaticBlock"
+"Category Products","Category Products"
+SubCategories,SubCategories
+"All Store Views","All Store Views"
+"Store View","Store View"
+ID,ID
+"Profile Information","Profile Information"
+"Enable Profile","Enable Profile"
+From,From
+To,To
+"Magezon Category Page Builder","Magezon Category Page Builder"
+"Delete items","Delete items"
+"Are you sure you wan't to delete selected items?","Are you sure you wan't to delete selected items?"
+Disable,Disable
+Enable,Enable
+DESC,DESC
+Status,Status

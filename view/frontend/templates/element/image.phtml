@@ -1,0 +1,8 @@
+<?php
+$element     = $this->getElement();
+$category    = $this->getCategory();
+$imgUrl      = $category->getImageUrl();
+$imageWidth  = $element->getData('image_width');
+$imageHeight = $element->getData('image_height');
+?>
+<img src="<?= $imgUrl ?>" <?= $imageWidth ? 'width="' . $imageWidth . '"' : '' ?> <?= $imageHeight ? 'height="' . $imageHeight . '"' : '' ?> alt="<?= $block->escapeHtml($category->getName()) ?>" title="<?= $block->escapeHtml($category->getName()) ?>" class="cpb-category-image" />

@@ -1,0 +1,26 @@
+<?php
+$dataHelper = $this->helper('\Cytracon\CategoryPageBuilder\Helper\Data');
+$element = $this->getElement();
+$useThemeLayout = $element->getData('use_theme_layout');
+$isAjaxLayerEnabled = $dataHelper->isModuleOutputEnabled('Mageplaza_AjaxLayer');
+?>
+<?php if ($isAjaxLayerEnabled) { ?>
+<div id="layer-product-list">
+<?php } ?>
+	<?php if (!$block->isContentMode() || $block->isMixedMode()) { ?>
+		<?php if ($useThemeLayout) { ?>
+		    <?= $block->renderElement('category.products.list') ?>
+		<?php } else { ?>
+			<?php $productListBlock = $this->getLayout()->getBlock('category.products.list'); ?>
+			<?php
+			if ($productListBlock) {
+				$productListBlock->setTemplate('Cytracon_CategoryPageBuilder::product/list.phtml');
+				$productListBlock->setData('cpb_element', $element);
+				echo $productListBlock->toHtml();
+			}
+			?>
+		<?php } ?>
+	<?php } ?>
+<?php if ($isAjaxLayerEnabled) { ?>
+</div>
+<?php } ?>

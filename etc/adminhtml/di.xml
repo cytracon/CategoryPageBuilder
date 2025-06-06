@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Cytracon
+ *
+ * This source file is subject to the Cytracon Software License, which is available at https://www.cytracon.com/license.
+ * Do not edit or add to this file if you wish to upgrade the to newer versions in the future.
+ * If you wish to customize this module for your needs.
+ * Please refer to https://www.cytracon.com for more information.
+ *
+ * @category  Cytracon
+ * @package   Cytracon_CategoryPageBuilder
+ * @copyright Copyright (C) 2019 Cytracon (https://www.cytracon.com)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="Cytracon\CategoryPageBuilder\Ui\Profile\Modifier\Pool" type="Magento\Ui\DataProvider\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="preview_modal" xsi:type="array">
+                    <item name="class" xsi:type="string">Cytracon\CategoryPageBuilder\Ui\DataProvider\Profile\Form\Modifier\PreviewModal</item>
+                    <item name="sortOrder" xsi:type="number">40</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Cytracon\CategoryPageBuilder\Ui\DataProvider\Profile\Form\ProfileDataProvider">
+        <arguments>
+            <argument name="pool" xsi:type="object">Cytracon\CategoryPageBuilder\Ui\Profile\Modifier\Pool</argument>
+        </arguments>
+    </type>
+    <virtualType name="Cytracon\CategoryPageBuilder\Ui\Category\Modifier\Pool" type="Magento\Ui\DataProvider\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="cpb_profile_id" xsi:type="array">
+                    <item name="class" xsi:type="string">Cytracon\CategoryPageBuilder\Ui\DataProvider\Category\Form\Modifier\Profile</item>
+                    <item name="sortOrder" xsi:type="number">40</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Catalog\Model\Category\DataProvider">
+        <arguments>
+            <argument name="pool" xsi:type="object">Cytracon\CategoryPageBuilder\Ui\Category\Modifier\Pool</argument>
+        </arguments>
+    </type>
+</config>

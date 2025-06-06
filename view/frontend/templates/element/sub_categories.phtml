@@ -1,0 +1,81 @@
+<?php
+$coreHelper       = $this->helper('\Cytracon\Core\Helper\Data');
+$element          = $this->getElement();
+$collection       = $this->getCollection();
+$layout           = $element->getData('layout');
+$xl               = $element->getData('item_xl');
+$lg               = $element->getData('item_lg');
+$md               = $element->getData('item_md');
+$sm               = $element->getData('item_sm');
+$xs               = $element->getData('item_xs');
+$showName         = $element->getData('show_name');
+$showImage        = $element->getData('show_image');
+$showProductCount = $element->getData('show_productcount');
+$showDescription  = $element->getData('show_description');
+$imageWidth       = $element->getData('image_width');
+$imageHeight      = $element->getData('image_height');
+$lazyLoad         = $element->getData('owl_lazyload');
+if ($lazyLoad && $layout != 'slider') $lazyLoad = false;
+
+$classes = [];
+if ($layout == 'grid') {
+	$classes[] = 'mgz-grid';
+}
+if ($layout == 'slider') {
+	$classes[] = 'mgz-carousel';
+	$classes[] = 'owl-carousel';
+	$classes = array_merge($classes, $this->getOwlCarouselClasses());
+}
+if ($layout == 'list') {
+	$classes[] = 'subcategory-list';
+}
+
+if ($layout == 'grid') {
+	$classes[] = 'mgz-grid-col-xl-' . $xl;
+	$classes[] = 'mgz-grid-col-lg-' . $lg;
+	$classes[] = 'mgz-grid-col-md-' . $md;
+	$classes[] = 'mgz-grid-col-sm-' . $sm;
+	$classes[] = 'mgz-grid-col-xs-' . $xs;
+}
+
+$carouselOptions = $this->getOwlCarouselOptions();
+$overlayValid = false;
+$displayStyle = $element->getData('display_style');
+if ($displayStyle == 'style2' && $element->getData('overlay_color')) $overlayValid = true;
+?>
+<div class="<?= implode(' ', $classes) ?>" <?php if ($layout == 'slider') { ?>data-mage-init='{"Cytracon_Builder/js/carousel":<?= $coreHelper->serialize($carouselOptions) ?>}'<?php } ?>>
+	<?php foreach ($collection as $_category) { ?>
+		<div class="subcategory">
+			<div class="subcategory-inner">
+				<?php
+				$imgUrl = $_category->getImageUrl();
+				?>
+				<?php if ($showImage && $imgUrl) { ?>
+					<a href="<?= $_category->getUrl() ?>" title="<?= $block->escapeHtml($_category->getName()) ?>" class="subcategory-photo"><img class="subcategory-image <?= $lazyLoad ? 'owl-lazy' : '' ?>" src="<?= !$lazyLoad ? $imgUrl : '' ?>"<?= $lazyLoad ? 'data-src="' . $imgUrl . '"' : '' ?>  alt="<?= $block->escapeHtml($_category->getName()) ?>" title="<?= $block->escapeHtml($_category->getName()) ?>" <?= $imageWidth ? 'width=' . $imageWidth . '"' : '' ?> <?= $imageHeight ? 'height=' . $imageHeight . '"' : '' ?>/>
+					</a>
+				<?php } ?>
+				<?php if ($layout == 'list') { ?>
+				<?php } ?>
+				<?php if ($showName) { ?>
+				<div class="subcategory-name"><a href="<?= $_category->getUrl() ?>" title="<?= $block->escapeHtml($_category->getName()) ?>"><span><?= $_category->getName() ?></span> <?php if ($showProductCount) { ?><span>(<?= $_category->getProductCount() ?>)</span><?php } ?>
+					</a></div>
+				<?php } ?>
+				<?php if ($showDescription) { ?>
+					<div class="subcategory-description">
+						<?php $_description = $this->getCategoryDescription($_category); ?>
+						<?= $_description ? $_description : $coreHelper->filter($_category->getDescription()) ?>
+						<?php if ($_description) { ?>
+						<a href="<?= $_category->getUrl() ?>" title="<?= $block->escapeHtml($_category->getName()) ?>" class="action more"><?= __('Learn More') ?></a>
+		                <?php } ?>
+					</div>
+				<?php } ?>
+				<?php if ($layout == 'list') { ?>
+				<?php } ?>
+				<?php if ($overlayValid) { ?>
+					<div class="mgz-overlay"></div>
+					<a class="mgz-absolute-link" href="<?= $_category->getUrl() ?>" title="<?= $block->escapeHtml($_category->getName()) ?>"></a>
+				<?php } ?>
+			</div>
+		</div>	
+	<?php } ?>
+</div>

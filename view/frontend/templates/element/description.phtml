@@ -1,0 +1,7 @@
+<?php
+$coreHelper = $this->helper('\Cytracon\Core\Helper\Data');
+$category   = $this->getCategory();
+?>
+<div class="cpb-category-description">
+	<?= $coreHelper->filter($category->getDescription()) ?>
+</div>
